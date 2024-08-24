@@ -1,0 +1,247 @@
+
+.gallery {
+  position: relative;
+  height: 100vh;
+  background: #25172b;
+  display: flex;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.backtoHome {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+}
+.content {
+  margin-left: 17vw; /* Adjust based on the width of the side menu */
+  padding: 20px;
+  width: 80%;
+  overflow: auto;
+}
+
+.back-home-button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5px;
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+.back-icon {
+  width: 50px; /* Adjust the size as needed */
+  height: 50px;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+  box-shadow: rgba(238, 238, 241, 0.25) 0px 6px 12px -2px, rgba(248, 246, 246, 0.3) 0px 3px 7px -3px;
+}
+
+.back-home-button:hover .back-icon {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Start at the original position */
+  }
+  40% {
+    transform: translateY(-15px); /* Move up */
+  }
+  60% {
+    transform: translateY(-7px); /* Move down slightly */
+  }
+}
+
+
+/* ================================================ */
+/* Styling for the sea container */
+.sea {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #004d66 0%, #17379ec2 30%, #00264d 50%, #0a002a 80%,#040110 100%);
+}
+
+/* Styling for fish elements */
+.fish {
+  position: absolute;
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Ensure height is set for images */
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: swim 40s linear infinite;
+}
+
+/* Positioning for each fish */
+.fish1 { width: 200px; height: 150px; top: 15%; left: 0%;animation: swim1 42s linear infinite; }
+.fish2 { width: 200px; height: 150px; top: 20%; left: 20%; animation: swim2 93s linear infinite;}
+.fish3 {  width: 200px; height: 150px;top: 30%; left: 11%; animation: swim2 85s linear infinite;}
+.fish4 {  width: 200px; height: 150px;top: 40%; left: 10%;animation: swim4 80s linear infinite; }
+.fish5 { width: 250px; height: 200px; top: 50%; left: 1%;animation: swim5 52s linear infinite; }
+.fish6 {  width: 200px; height: 150px;top: 60%; left: 20%; animation: swim6 39s linear infinite;}
+.fish7 { width: 200px; height: 150px; top: 45%; left: 10%;  animation: swim7 57s linear infinite; }
+.fish8 {  width: 200px; height: 150px;top: 58%; left: 25%; animation: swim8 60s linear infinite;}
+.fish9 {  width: 200px; height: 150px;top: 65%; left: 40%; animation: swim9 122s linear infinite; }
+.fish10 {  width: 200px; height: 150px;top: 85%; left: 5%;animation: swim10 45s linear infinite; }
+
+
+/* Animation for swimming fish */
+@keyframes swim {
+  0% {
+    transform: translateX(-100px); /* Start off the screen */
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px)); /* Move across the entire viewport */
+  }
+}
+@keyframes swim1 {
+  0% { transform: translateX(-100px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(0); }
+}
+
+@keyframes swim2 {
+  0% { transform: translateX(-100px) translateY(-50px); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(-50px); }
+}
+
+@keyframes swim3 {
+  0% { transform: translateX(-100px) translateY(-100px); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(-100px); }
+}
+
+@keyframes swim4 {
+  0% { transform: translateX(-200px) translateY(50px); }
+  100% { transform: translateX(calc(100vw + 200px)) translateY(50px); }
+}
+
+@keyframes swim5 {
+  0% { transform: translateX(-50px) translateY(100px); }
+  100% { transform: translateX(calc(100vw + 50px)) translateY(100px); }
+}
+
+@keyframes swim6 {
+  0% { transform: translateX(-150px) translateY(-150px); }
+  100% { transform: translateX(calc(100vw + 150px)) translateY(-150px); }
+}
+
+@keyframes swim7 {
+  0% { transform: translateX(-100px) translateY(100px); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(100px); }
+}
+
+@keyframes swim8 {
+  0% { transform: translateX(-100px) translateY(100px); }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(100px); }
+}
+
+@keyframes swim9 {
+  0% { transform: translateX(-50px) translateY(50px); }
+  100% { transform: translateX(calc(100vw + 50px)) translateY(50px); }
+}
+
+@keyframes swim10 {
+  0% { transform: translateX(-50px) translateY(0); }
+  100% { transform: translateX(calc(100vw + 50px)) translateY(0); }
+}
+/* Bubble */
+
+.img-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Ensure bubbles don't overflow the container */
+  z-index: 1; /* Ensure bubbles are behind the quiz content */
+}
+
+/* Style for individual bubbles */
+.img1 {
+  position: absolute;
+  width:200px; /* Adjust size as needed */
+  height: 200px; /* Adjust size as needed */
+  opacity: 1; /* Slight transparency for a subtle effect */
+  animation: floatUp 130s ease infinite, moveRandom 50s linear infinite;
+  z-index: 3;
+  margin-top: 40px;
+}
+.img2 {
+  position: relative;
+  width:150px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+  margin-top: 60px;
+  margin-right: 50px;
+  opacity: 0.96; /* Slight transparency for a subtle effect */
+  animation: floatUp 25s ease-out infinite, moveRandom 30s linear infinite;
+} .img3 {
+  position: absolute;
+  width:350px; /* Adjust size as needed */
+  height: 350px; /* Adjust size as needed */
+  opacity: 1; /* Slight transparency for a subtle effect */
+  animation: floatUp 80s ease-in infinite, moveRandom 70s linear infinite;
+  z-index: 2.5;
+  margin-top: 20px;
+  left: -20px;
+  bottom: 40px;
+}
+.img4 {
+  position: absolute;
+  width:200px; /* Adjust size as needed */
+  height: 200px; /* Adjust size as needed */
+  opacity: 0.86; /* Slight transparency for a subtle effect */
+  animation: floatUp 5s ease-in-out infinite, moveRandom 40s  infinite;
+} .img5 {
+  position: absolute;
+  width:80px; /* Adjust size as needed */
+  height: 80px; /* Adjust size as needed */
+  opacity: 0.86; /* Slight transparency for a subtle effect */
+  animation: floatUp 35s ease-in infinite, moveRandom 30s linear infinite;
+  z-index: 2;
+}
+/* Floating animation to move bubbles up */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh); /* Start from below the viewport */
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-50vh); /* Move halfway up */
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh); /* Move to the top of the viewport */
+    opacity: 0;
+  }
+}
+
+/* Random movement animation to move bubbles horizontally and vertically */
+@keyframes moveRandom {
+  0% {
+    transform: translate(0, 0); /* Start position */
+  }
+  25% {
+    transform: translate(calc(100vw * var(--random-x)), calc(-50vh + 100px)); /* Move right and up */
+  }
+  50% {
+    transform: translate(calc(-100vw * var(--random-x)), calc(50vh - 100px)); /* Move left and down */
+  }
+  75% {
+    transform: translate(calc(100vw * var(--random-x)), calc(-50vh + 200px)); /* Move right and up again */
+  }
+  100% {
+    transform: translate(0, 0); /* Return to start position */
+  }
+}
+
+/* Generating random values for the movement */
+@keyframes moveRandom {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(calc(100vw * 0.5), calc(-50vh + 100px)); }
+  50% { transform: translate(calc(-100vw * 0.5), calc(50vh - 100px)); }
+  75% { transform: translate(calc(100vw * 0.5), calc(-50vh + 200px)); }
+  100% { transform: translate(0, 0); }
+}

@@ -1,0 +1,260 @@
+/* Container for the entire quiz */
+.quizouter {
+    position: relative; /* Ensures it covers the entire viewport */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw; 
+    background-color: #25172b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Container for the quiz content */
+.quiz-container {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    padding: 40px;
+    background: #0c1d607c;
+    border-radius: 10px;
+    box-shadow: rgba(8, 52, 199, 0.873) 0px 0px 0.25em, rgba(52, 65, 214, 0.368) 0px 0.25em 1em;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Position and style for the score display */
+.score-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10; /* Ensure score is always on top */
+}
+
+/* Score text style */
+.score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff3b8d;
+    text-shadow: 1px 1px 2px rgba(12, 67, 234, 0.855);
+}
+
+/* Style for question display */
+.question-container {
+    text-align: center;
+}
+
+/* Question text style */
+.question {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Container for answer options */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style for each option button */
+.option-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: solid 1px #f0da79 ;
+    border-radius: 5px;
+    background: #c218c87b;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 30px 0 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(230, 224, 224, 0.3);
+}
+
+/* Option button hover effect */
+.option-button:hover {
+    background: #7371097d;
+    transform: scale(1.05);
+}
+
+/* Container for the result display */
+.result-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+/* Result text style */
+.result {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #779cf1;
+    animation: bounceIn 0.5s ease-out;
+}
+
+/* Style for the restart button */
+.restart-button {
+    padding: 10px;
+    font-size: 1rem;
+    border: solid 1px #fff;
+    border: none;
+    border-radius: 15px;
+    background: #03a8f447;
+    border: solid 2px #171fefe0;;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: rgba(227, 218, 218, 0.07) 0px 1px 2px, rgba(239, 231, 231, 0.07) 0px 2px 4px, rgba(246, 241, 241, 0.07) 0px 4px 8px, rgba(239, 237, 237, 0.07) 0px 8px 16px, rgba(239, 236, 236, 0.07) 0px 16px 32px, rgba(234, 228, 228, 0.07) 0px 32px 64px;
+    margin-top: 20px;
+}
+
+/* Restart button hover effect */
+.restart-button:hover {
+    background: #03a8f467;
+    transform: scale(1.05);
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Container for bubbles */
+.img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensure bubbles don't overflow the container */
+    z-index: 0; /* Ensure bubbles are behind the quiz content */
+  }
+  
+  /* Style for individual bubbles */
+  .img1 {
+    position: absolute;
+    width:250px; /* Adjust size as needed */
+    height: 250px; /* Adjust size as needed */
+    opacity: 1; /* Slight transparency for a subtle effect */
+    animation: floatUp 130s ease infinite, moveRandom 50s linear infinite;
+    z-index: 3;
+    margin-top: 40px;
+  }
+  .img2 {
+    position: relative;
+    width:450px; /* Adjust size as needed */
+    height: 350px; /* Adjust size as needed */
+    margin-top: 60px;
+    margin-right: 50px;
+    opacity: 0.96; /* Slight transparency for a subtle effect */
+    animation: floatUp 25s ease-out infinite, moveRandom 30s linear infinite;
+  } .img3 {
+    position: absolute;
+    width:550px; /* Adjust size as needed */
+    height: 550px; /* Adjust size as needed */
+    opacity: 1; /* Slight transparency for a subtle effect */
+    animation: floatUp 80s ease-in infinite, moveRandom 70s linear infinite;
+    z-index: 2.5;
+    margin-top: 20px;
+    left: -20px;
+    bottom: 40px;
+  }
+  .img4 {
+    position: absolute;
+    width:250px; /* Adjust size as needed */
+    height: 250px; /* Adjust size as needed */
+    opacity: 0.86; /* Slight transparency for a subtle effect */
+    animation: floatUp 5s ease-in-out infinite, moveRandom 40s  infinite;
+  } .img5 {
+    position: absolute;
+    width:450px; /* Adjust size as needed */
+    height: 450px; /* Adjust size as needed */
+    opacity: 0.86; /* Slight transparency for a subtle effect */
+    animation: floatUp 35s ease-in infinite, moveRandom 30s linear infinite;
+    z-index: 2;
+  }
+  /* Floating animation to move bubbles up */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh); /* Start from below the viewport */
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-50vh); /* Move halfway up */
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-100vh); /* Move to the top of the viewport */
+      opacity: 0;
+    }
+  }
+  
+  /* Random movement animation to move bubbles horizontally and vertically */
+  @keyframes moveRandom {
+    0% {
+      transform: translate(0, 0); /* Start position */
+    }
+    25% {
+      transform: translate(calc(100vw * var(--random-x)), calc(-50vh + 100px)); /* Move right and up */
+    }
+    50% {
+      transform: translate(calc(-100vw * var(--random-x)), calc(50vh - 100px)); /* Move left and down */
+    }
+    75% {
+      transform: translate(calc(100vw * var(--random-x)), calc(-50vh + 200px)); /* Move right and up again */
+    }
+    100% {
+      transform: translate(0, 0); /* Return to start position */
+    }
+  }
+  
+  /* Generating random values for the movement */
+  @keyframes moveRandom {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(calc(100vw * 0.5), calc(-50vh + 100px)); }
+    50% { transform: translate(calc(-100vw * 0.5), calc(50vh - 100px)); }
+    75% { transform: translate(calc(100vw * 0.5), calc(-50vh + 200px)); }
+    100% { transform: translate(0, 0); }
+  }
+   
