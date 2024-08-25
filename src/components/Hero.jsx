@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './Hero.css';
 import jellyfish from '../assets/jellyfish.png';
 import startfish from '../assets/starfish.png';
-
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (<>
@@ -11,7 +11,9 @@ const Hero = () => {
       <div className="hero-content">
         <h1 className="hero-heading">Discover the Deep Blue</h1>
         <p className="hero-subheading">Dive into the world of sea animals</p>
+        <Link to="/gallery">
         <button className="hero-btn">Explore Now</button>
+        </Link>
       </div>
       
       <div className="hero-img-container1">
